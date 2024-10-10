@@ -1,0 +1,45 @@
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\appsettings.json
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Web Api Project.exe
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Web Api Project.deps.json
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Web Api Project.runtimeconfig.json
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Web Api Project.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Web Api Project.pdb
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\Web Api Project.csproj.AssemblyReference.cache
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\Web Api Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\Web Api Project.AssemblyInfoInputs.cache
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\Web Api Project.AssemblyInfo.cs
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\Web Api Project.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\Web Api Project.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\Web Api Project.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\staticwebassets\msbuild.Web Api Project.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\staticwebassets\msbuild.build.Web Api Project.props
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Web Api Project.props
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Web Api Project.props
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\scopedcss\bundle\Web Api Project.styles.css
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\Web Api Project.csproj.CopyComplete
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\Web Api Project.dll
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\refint\Web Api Project.dll
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\Web Api Project.pdb
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\Web Api Project.genruntimeconfig.cache
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\ref\Web Api Project.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Data\Tasks.json
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Data\Users.json
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Microsoft.Bcl.TimeProvider.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
