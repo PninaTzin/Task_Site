@@ -45,7 +45,7 @@ namespace Web_Api_Project.Controllers
             }
         }
 
-        [HttpDelete("{userId}delete{taskId}")]
+        [HttpDelete("{userId}/delete/{taskId}")]
         public IActionResult Delete(int userId, int taskId)
         {
             var result = _taskService.Delete(userId, taskId);
@@ -61,7 +61,7 @@ namespace Web_Api_Project.Controllers
             }
         }
 
-        [HttpPut("{userId}update{taskId}")]
+        [HttpPut("{userId}/update/{taskId}")]
         public IActionResult Update(int userId, int taskId, TaskItem task)
         {
             var result = _taskService.Update(userId, taskId, task);

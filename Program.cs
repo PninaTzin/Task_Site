@@ -10,6 +10,8 @@ namespace Web_Api_Project
         {
             var builder = WebApplication.CreateSlimBuilder(args);
 
+
+            builder.Services.AddHttpClient();
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
 
@@ -20,15 +22,22 @@ namespace Web_Api_Project
             builder.Services.AddScoped<IUserTaskServices, UserTaskServices>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<ITaskServices, TaskService>();
-
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder => builder.AllowAnyOrigin()
+                                      .AllowAnyMethod()
+                                      .AllowAnyHeader());
+            });
             var app = builder.Build();
 
             app.UseMiddleware<logMiddleware>();
-            
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseCors("AllowAllOrigins"); // הוסף את זה לפני app.UseRouting()
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>

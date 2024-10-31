@@ -31,7 +31,7 @@ namespace Web_Api_Project.Controllers
         }
 
         [HttpPost("{currentUserId}/post")]
-        public IActionResult post(int currentUserId, User user)
+        public IActionResult Post(int currentUserId, User user)
         {
             var currentUser = _userService.Get(currentUserId);
             if (currentUser == null)

@@ -3,6 +3,8 @@ using Web_Api_Project.Interface;
 using Web_Api_Project.Helpers;
 using System.Collections.Generic;
 using System.Linq;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace Web_Api_Project.Services
 {
@@ -16,6 +18,39 @@ namespace Web_Api_Project.Services
             this._userTaskServices = userTaskServices;
             users = JsonFileHelper.LoadFromFile<User>(filePath);
         }
+
+        public bool CheckAdminPrivileges(string token)
+        {
+            var claims = GetClaimsFromToken(token);
+            if (claims == null || !IsTokenValid(token)) // בדיקת תוקף
+            {
+                return false; // טוקן לא תקף
+            }
+
+            return claims.Any(c => c.Type == ClaimTypes.Role && c.Value == "Admin");
+        }
+
+        public bool CheckAuthentication(string token)
+        {
+            return GetClaimsFromToken(token) != null && IsTokenValid(token); // בדיקת תוקף
+        }
+
+        private bool IsTokenValid(string token)
+        {
+            // כאן תוסיף לוגיקה לבדוק את תוקף ה-JWT, כמו בדיקת תאריך פקיעה
+            var jwtHandler = new JwtSecurityTokenHandler();
+            var jwtToken = jwtHandler.ReadJwtToken(token);
+            return jwtToken.ValidTo > DateTime.UtcNow; // בדוק אם פג תוקף
+        }
+
+        private IEnumerable<Claim> GetClaimsFromToken(string token)
+        {
+            // לוגיקה להוצאת טענות מהטוקן
+            var jwtHandler = new JwtSecurityTokenHandler();
+            var jwtToken = jwtHandler.ReadJwtToken(token);
+            return jwtToken.Claims;
+        }
+
         public List<User> GetAll()
         {
             return users;

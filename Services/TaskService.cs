@@ -11,10 +11,13 @@ namespace Web_Api_Project.Services
         private string filePath = "DATA/Tasks.json";
         private List<TaskItem> tasks;
         private IUserService _userService;
+        private HttpClient _httpClient; // הוסף את HttpClient
 
-        public TaskService(IUserService userService)
+
+        public TaskService(IUserService userService, HttpClient httpClient)
         {
             this._userService = userService;
+            this._httpClient = httpClient;
             tasks = JsonFileHelper.LoadFromFile<TaskItem>(filePath);
 
         }
@@ -24,7 +27,7 @@ namespace Web_Api_Project.Services
         //    tasks = tasks.Where(t => t.UserId != userId).ToList();
         //     JsonFileHelper.SaveToFile("DATA/Tasks.json", tasks);
         // }
-        
+
         public List<TaskItem> GetAll(int userId)
         {
             return tasks.Where(t => t.UserId == userId).ToList();
@@ -54,19 +57,39 @@ namespace Web_Api_Project.Services
 
         public Result Delete(int userId, int taskId)
         {
-            var DeletTask = tasks.FirstOrDefault(t => t.TaskId == taskId && t.UserId == userId);
-            if (DeletTask != null)
+            var taskToDelete = tasks.FirstOrDefault(t => t.TaskId == taskId && t.UserId == userId);
+            if (taskToDelete != null)
             {
-                tasks.Remove(DeletTask);
+                // שלח בקשה לשרת למחוק את המשימה
+                var response = _httpClient.DeleteAsync($"https://http://localhost:5050//tasks/{taskId}");
+                // if (response.IsCompletedSuccessfully)
+                // {
+                tasks.Remove(taskToDelete);
                 JsonFileHelper.SaveToFile(filePath, tasks);
                 return new Result(true, $"Task {taskId} deleted successfully.");
             }
+            // else
+            // {
+            // return new Result(false, "Error deleting task on the server.");
+            // }
             else
             {
                 return new Result(false, "Task not found.");
-
             }
         }
+        // var DeletTask = tasks.FirstOrDefault(t => t.TaskId == taskId && t.UserId == userId);
+        // if (DeletTask != null)
+        // {
+        //     tasks.Remove(DeletTask);
+        //     JsonFileHelper.SaveToFile(filePath, tasks);
+        //     return new Result(true, $"Task {taskId} deleted successfully.");
+        // }
+        // else
+        // {
+        //     return new Result(false, "Task not found.");
+
+        // }
+        // }
         public Result Update(int userId, int taskId, TaskItem task)
         {
             var taskIndex = tasks.FindIndex(t => t.UserId == userId && t.TaskId == taskId);
@@ -76,7 +99,7 @@ namespace Web_Api_Project.Services
                 tasks[taskIndex].Description = task.Description;
                 tasks[taskIndex].Status = task.Status;
                 tasks[taskIndex].UserId = userId;
-                
+
                 JsonFileHelper.SaveToFile(filePath, tasks);
                 return new Result(true, $"Task {task.Description} Update successfully.");
             }
@@ -85,8 +108,15 @@ namespace Web_Api_Project.Services
                 return new Result(false, "Task or User not found.");
 
             }
+            LoadTasks();
+
         }
 
+        private void LoadTasks()
+        {
+            // כאן תוכל לטעון את המשימות מחדש או לוגיקה אחרת לעדכון הממשק
+            tasks = JsonFileHelper.LoadFromFile<TaskItem>(filePath);
+        }
     }
 }
 // task.TaskId = tasks.Count > 0 ? tasks.Max(t => t.TaskId) + 1 : 1;
