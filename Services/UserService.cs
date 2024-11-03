@@ -13,9 +13,12 @@ namespace Web_Api_Project.Services
         private string filePath = "DATA/Users.json";
         private List<User> users;
         private IUserTaskServices _userTaskServices;
-        public UserService(IUserTaskServices userTaskServices)
+        private readonly TokenService _tokenService;
+
+        public UserService(IUserTaskServices userTaskServices, TokenService tokenService)
         {
             this._userTaskServices = userTaskServices;
+            this._tokenService = tokenService;
             users = JsonFileHelper.LoadFromFile<User>(filePath);
         }
 

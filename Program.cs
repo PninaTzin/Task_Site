@@ -10,7 +10,6 @@ namespace Web_Api_Project
         {
             var builder = WebApplication.CreateSlimBuilder(args);
 
-
             builder.Services.AddHttpClient();
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
@@ -19,9 +18,12 @@ namespace Web_Api_Project
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Web API Project", Version = "v1" });
             });
+            builder.Services.AddScoped<TokenService>();
             builder.Services.AddScoped<IUserTaskServices, UserTaskServices>();
             builder.Services.AddScoped<IUserService, UserService>();
             builder.Services.AddScoped<ITaskServices, TaskService>();
+            builder.Services.AddScoped<ILoginService, LoginService>();
+
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllOrigins",
@@ -31,6 +33,7 @@ namespace Web_Api_Project
             });
             var app = builder.Build();
 
+            app.UseStaticFiles();
             app.UseMiddleware<logMiddleware>();
 
             if (app.Environment.IsDevelopment())
@@ -38,7 +41,7 @@ namespace Web_Api_Project
                 app.UseDeveloperExceptionPage();
             }
             app.UseCors("AllowAllOrigins"); // הוסף את זה לפני app.UseRouting()
-
+            app.UseRouting();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

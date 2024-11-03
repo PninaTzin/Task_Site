@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="./css/Style.css">
+</head>
+
+<body>
+    <h1>Login</h1>
+    <div id="login">
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button id="loginButton">Login</button>
+        <div id="result"></div>
+    </div>
+    <div id="todo" class="hidden">
+        <h2>Your Tasks</h2>
+        <ul id="taskList"></ul>
+        <input type="text" id="taskDescription" placeholder="New task description">
+        <button id="addTaskButton">Add Task</button>
+        <button id="logoutButton">Logout</button>
+    </div>
+    <script src="./js/Script.js"></script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="./css/Style.css">
+    <script src="./js/Script.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <div id="login" class="hidden">
+            <h2>כניסה</h2>
+            <input type="text" id="username" placeholder="שם משתמש">
+            <input type="password" id="password" placeholder="סיסמה">
+            <button id="loginButton">התחבר</button>
+            <a href="https://app.getpostman.com" target="_blank">Postman</a>
+        </div>
+        
+        <div id="todo" class="hidden">
+            <h2>רשימת מטלות</h2>
+            <ul id="taskList"></ul>
+            <input type="text" id="taskDescription" placeholder="תיאור המטלה">
+            <button id="addTaskButton">הוסף מטלה</button>
+            <button id="logoutButton">התנתק</button>
+
+            <div id="adminLinks" class="hidden">
+                <button id="viewUsersButton">צפה ברשימת משתמשים</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
+    <style>
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .task-list li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+
+        .task-completed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+
+<body>
+    <div id="app">
+        <div v-if="!isLoggedIn">
+            <h1>Login</h1>
+            <input type="text" v-model="username" placeholder="Username">
+            <input type="password" v-model="password" placeholder="Password">  
+
+            <button @click="login">Login</button>  
+
+            <a href="https://www.getpostman.com/downloads/">Get Postman</a>
+        </div>
+
+        <div v-else>
+            <h1>{{ user.userName }}'s To-Do List</h1>
+
+            <ul class="task-list">
+                <li v-for="task in tasks" :key="task.taskId">
+                    <input type="checkbox" v-model="task.status" @change="updateTask(task)">
+                    <span :class="{ task-completed: task.status }">{{ task.description }}</span>
+                    <button @click="deleteTask(task.taskId)">Delete</button>
+                    <button v-if="isAdmin" @click="editTask(task)">Edit</button>
+                </li>
+            </ul>
+
+            <input type="text" v-model="newTask" placeholder="Add new task">
+            <button @click="addTask">Add Task</button>
+
+            <a v-if="isAdmin" href="/users">Users List</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    username: '',
+                    password: '',
+                    isLoggedIn: false,
+                    user: null,
+                    tasks: [],
+                    newTask: '',
+                    isAdmin: false,
+                };
+            },
+            async mounted() {
+                try {
+                    const token = localStorage.getItem('token');
+                    if (token) {
+                        await this.validateToken(token);
+                    }
+                } catch (error) {
+                    console.error(error);
+                }
+            },
+            methods: {
+                async login() {
+                    try {
+                        const response = await axios.post('/api/auth/login', {
+                            username: this.username,
+                            password: this.password,
+                        });
+                        localStorage.setItem('token', response.data.token);
+
+                        await this.validateToken(response.data.token);
+                    } catch (error) {
+                        console.error(error);
+                        alert('Invalid login credentials');
+                    }
+                },
+                async validateToken(token) {
+                    const response = await axios.get('/api/auth/validate', {
+                        headers: { Authorization: `Bearer ${token}` },
+                    });
+                    this.isLoggedIn = true;
+                    this.user = response.data;
+                    this.isAdmin = this.user.role === 'Admin';
+                    await this.loadTasks();
+                },
+                async loadTasks() {
+                    const response = await axios.get(`/api/tasks/all/${this.user.userId}`);
+                    this.tasks = response.data;
+                },
+                async addTask() {
+                    if (!this.newTask) return;
+                    const response = await axios.post(`/api/tasks/${
+
+
+
+ -->
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="./css/Style.css">
+</head>
+
+<body>
+    <h1>Task Manager</h1>
+    <div id="adminLinks"></div>
+    <div id="tasks"></div>
+    <!-- <input type="text" id="taskDescription" placeholder="Enter task description">
+    <button onclick="addTask()">Add Task</button> -->
+<!-- </body>
+<script src="./js/Script.js"></script>
+
+</html>  --> -->

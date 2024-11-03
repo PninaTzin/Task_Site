@@ -43,3 +43,5 @@ C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Microsoft.IdentityModel
 C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\USER\Documents\Web Api Project\bin\Debug\net8.0\Web Api Project.staticwebassets.runtime.json
+C:\Users\USER\Documents\Web Api Project\obj\Debug\net8.0\Web Api Project.sourcelink.json

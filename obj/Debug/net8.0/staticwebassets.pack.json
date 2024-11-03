@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\USER\\Documents\\Web Api Project\\wwwroot\\Index.html",
+      "PackagePath": "staticwebassets\\Index.html"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Documents\\Web Api Project\\wwwroot\\Task.html",
+      "PackagePath": "staticwebassets\\Task.html"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Documents\\Web Api Project\\wwwroot\\User.html",
+      "PackagePath": "staticwebassets\\User.html"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Documents\\Web Api Project\\wwwroot\\css\\Index.css",
+      "PackagePath": "staticwebassets\\css\\Index.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Documents\\Web Api Project\\wwwroot\\css\\Style.css",
+      "PackagePath": "staticwebassets\\css\\Style.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Documents\\Web Api Project\\wwwroot\\js\\Index.js",
+      "PackagePath": "staticwebassets\\js\\Index.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Documents\\Web Api Project\\wwwroot\\js\\Login.js",
+      "PackagePath": "staticwebassets\\js\\Login.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Documents\\Web Api Project\\wwwroot\\js\\Script.js",
+      "PackagePath": "staticwebassets\\js\\Script.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Documents\\Web Api Project\\wwwroot\\js\\Task.js",
+      "PackagePath": "staticwebassets\\js\\Task.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Documents\\Web Api Project\\wwwroot\\js\\User.js",
+      "PackagePath": "staticwebassets\\js\\User.js"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Documents\\Web Api Project\\wwwroot\\login.html",
+      "PackagePath": "staticwebassets\\login.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Web Api Project.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Web Api Project.props",
+      "PackagePath": "build\\Web Api Project.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Web Api Project.props",
+      "PackagePath": "buildMultiTargeting\\Web Api Project.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Web Api Project.props",
+      "PackagePath": "buildTransitive\\Web Api Project.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -4,16 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Task Manager</title>
     <link rel="stylesheet" href="../css/Style.css">
 </head>
 
 <body>
     <h1>Login</h1>
     <div>
+        <div id="tasks"></div>
         <input type="text" id="username" placeholder="Username">
         <input type="password" id="password" placeholder="Password">
         <button onclick="login()">Login</button>
+        <div id="result"></div>
         <button onclick="openPostman()">Open in Postman</button>
     </div>
 </body>
