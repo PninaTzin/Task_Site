@@ -40,7 +40,7 @@ namespace Web_Api_Project
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseCors("AllowAllOrigins"); // הוסף את זה לפני app.UseRouting()
+            app.UseCors("AllowAllOrigins"); 
             app.UseRouting();
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -49,10 +49,10 @@ namespace Web_Api_Project
                 c.RoutePrefix = "swagger";
             });
             app.UseHttpsRedirection();
+            app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();
             app.Run();
         }
     }
 }
-// builder.Services.AddMyServices();
